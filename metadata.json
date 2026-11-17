@@ -1,0 +1,6 @@
+{
+  "name": "Perfect Match — Love Gifts",
+  "description": "An interactive romantic surprise featuring a Perfect Match mini-game, spinning vinyl song player, heartfelt letter, and blooming tulip notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

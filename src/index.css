@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Quicksand', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #4b3434;
+    background-color: #f9d5e0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-kawaii {
+  font-family: var(--font-sans);
+}
+
+/* Soft pink gingham wallpaper matching the video */
+.bg-pink-gingham {
+  background-color: #fbdce5;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(244, 168, 190, 0.35) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      rgba(244, 168, 190, 0.35) 50%,
+      transparent 50%
+    );
+  background-size: 38px 38px;
+}
+
+/* Soft blush radial backdrop for Song & Tulips stages */
+.bg-blush-studio {
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #fffcfd 0%,
+    #fdeef3 48%,
+    #f6cad8 100%
+  );
+}
+
+/* Lined notebook paper texture for Letter stage */
+.bg-notebook-paper {
+  background-color: #fbf1de;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 31px,
+    rgba(199, 174, 148, 0.38) 31px,
+    rgba(199, 174, 148, 0.38) 32px
+  );
+  background-position: 0 22px;
+}
+
+/* Scalloped inner border effect for Tulips frame */
+.scallop-frame {
+  background: #fffaf7;
+  box-shadow:
+    0 14px 36px rgba(154, 72, 96, 0.16),
+    0 0 0 6px #fffaf7,
+    0 0 0 8px #e49bb0;
+}
+
+/* 3D card flip helpers */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Vinyl spin animation */
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-vinyl-spin {
+  animation: vinyl-spin 6s linear infinite;
+}
+
+.vinyl-paused {
+  animation-play-state: paused;
+}
+
+/* Gentle floating heart drift */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-vinyl-spin,
+  .animate-gentle-float {
+    animation: none !important;
+  }
+}
